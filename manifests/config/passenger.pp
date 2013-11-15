@@ -20,11 +20,14 @@ class foreman::config::passenger (
   # Set up passenger
   include ::passenger
 
-  if $scl_prefix {
-    class {'::passenger::scl':
-      prefix => $scl_prefix,
-    }
-  }
+  # FIXME: Hack to make this work with puppetlabs-passenger right now.
+  # Longer term solution is to update puppetlabs-puppet and
+  # puppetlabs-apache so this can be killed.
+  #if $scl_prefix {
+  #  class {'::passenger::scl':
+  #    prefix => $scl_prefix,
+  #  }
+  #}
 
   # Workaround so apache::vhost doesn't attempt to create a directory
   file {"${foreman::app_root}/public": }
