@@ -9,7 +9,7 @@ class foreman::config::enc (
   $enc_api     = 'v2'
 ) inherits foreman::params {
 
-  File { require => Class['::puppet::server::install'] }
+  File { require => Class['::puppet::puppetmaster'] }
 
   file { '/etc/puppet/node.rb':
     content => template("foreman/external_node_${enc_api}.rb.erb"),
