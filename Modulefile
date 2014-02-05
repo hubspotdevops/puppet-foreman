@@ -9,7 +9,6 @@ project_page 'http://github.com/theforeman/foreman-installer'
 
 dependency 'theforeman/concat_native', '>= 1.2.0'
 dependency 'puppetlabs/apache', '>= 0.9.0'
-dependency 'puppetlabs/mysql'
 # puppetlabs-postgresql has a version syntax our librarian-puppet cannot
 # handle so comment this out.
 #dependency 'puppetlabs/postgresql', '>= 2.2.0'
